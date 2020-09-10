@@ -31,6 +31,11 @@ public class Problem_66_加一 {
     public static void main(String[] args) {
         Solution solution = new Problem_66_加一().new Solution();
         // TO TEST
+        int[] test = {1,2,3};
+        int[] ints = solution.plusOne(test);
+        for (int i = 0; i < ints.length; i++) {
+            System.out.print(ints[i]);
+        }
     }
 
     /***
@@ -39,18 +44,22 @@ public class Problem_66_加一 {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int[] plusOne(int[] digits) {
-            String num = "";
-            for (int i = 0; i < digits.length; i++) {
-                num += digits[i];
+            int[] add = new int[digits.length + 1];
+            add[0] = 1;
+
+            digits[digits.length - 1] = digits[digits.length - 1] + 1;
+            for (int i = digits.length - 1; i > 0; i--) {
+                digits[i - 1] = digits[i] / 10 + digits[i - 1];
+                digits[i] = digits[i] % 10;
             }
-            Integer temp = Integer.valueOf(num) + 1;
-            num = "" + temp;
-            char[] chars = num.toCharArray();
-            int[] result = {};
-            for (int i = 0; i < chars.length; i++) {
-                result[i] = Integer.valueOf(chars[i]);
+            if (digits[0] == 10) {
+                digits[0] = 0;
+                for (int i = 0; i < digits.length; i++) {
+                    add[i + 1] = digits[i];
+                }
+                return add;
             }
-            return result;
+            return digits;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
