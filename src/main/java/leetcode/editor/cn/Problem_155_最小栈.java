@@ -81,6 +81,7 @@ public class Problem_155_最小栈 {
 
         public void pop() {
             inStack.pop();
+            outStack.pop();
         }
 
         public int top() {

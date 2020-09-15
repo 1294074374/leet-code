@@ -33,12 +33,15 @@ public class Utils {
         if (arr == null || arr.length == 0) {
             return null;
         }
+
         ListNode head = new ListNode(-1);
+        ListNode result = head;
         for (int i = 0; i < arr.length; i++) {
             ListNode treeNode = new ListNode(arr[i]);
             head.next = treeNode;
+            head = head.next;
         }
-        return head.next;
+        return result.next;
     }
 
 }
