@@ -27,6 +27,8 @@ public class Problem_125_验证回文串 {
     public static void main(String[] args) {
         Solution solution = new Problem_125_验证回文串().new Solution();
         // TO TEST
+        String test = "A man, a plan, a canal: Panama";
+        System.out.println(solution.isPalindrome(test));
     }
 
     /***
@@ -35,12 +37,10 @@ public class Problem_125_验证回文串 {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public boolean isPalindrome(String s) {
-            if (s == null || "".equals(s)) {
-                return false;
+            if (s == null || "".equals(s) || s.length()==1) {
+                return true;
             }
-            s = s.replace("", " ");
-            s = s.replace(",", "");
-            s = s.replace(":", "");
+            s = s.replaceAll("[^0-9a-zA-Z]","");
             s = s.toLowerCase();
             int i = 0;
             int j = s.length() - 1;

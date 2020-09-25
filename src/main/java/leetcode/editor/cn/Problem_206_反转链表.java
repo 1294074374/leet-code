@@ -1,0 +1,64 @@
+package leetcode.editor.cn;
+//反转一个单链表。 
+//
+// 示例: 
+//
+// 输入: 1->2->3->4->5->NULL
+//输出: 5->4->3->2->1->NULL 
+//
+// 进阶: 
+//你可以迭代或递归地反转链表。你能否用两种方法解决这道题？ 
+// Related Topics 链表 
+// 👍 1239 👎 0
+
+import java.util.Stack;
+
+/**
+ * Java：反转链表 
+ 
+ * @author laijunlin
+ * @data 2020-09-25 17:02:58
+ */
+public class Problem_206_反转链表{
+    public static void main(String[] args) {
+        Solution solution = new Problem_206_反转链表().new Solution();
+        // TO TEST
+        int [] arr = {1,2,3,4,5};
+        ListNode list = Utils.createList(arr);
+        solution.reverseList(list);
+    }
+    /***
+     * 模板
+     */
+    //leetcode submit region begin(Prohibit modification and deletion)
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode myHead = head;
+        ListNode result = myHead;
+        Stack<ListNode> stack  = new Stack<>();
+
+        while(head!=null){
+            stack.push(head);
+            head = head.next;
+        }
+        while (!stack.isEmpty()){
+            ListNode temp = new ListNode(stack.pop().val);
+            myHead.next = temp;
+            myHead = myHead.next;
+        }
+        return result.next;
+    }
+}
+//leetcode submit region end(Prohibit modification and deletion)
+
+}
+
+

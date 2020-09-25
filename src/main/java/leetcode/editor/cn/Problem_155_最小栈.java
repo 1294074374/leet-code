@@ -75,8 +75,8 @@ public class Problem_155_最小栈 {
         }
 
         public void push(int x) {
-            inStack.push(x);
             outStack.push(Math.min(x, outStack.pop()));
+            inStack.push(x);
         }
 
         public void pop() {

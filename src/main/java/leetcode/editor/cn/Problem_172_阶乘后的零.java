@@ -41,14 +41,8 @@ public class Problem_172_阶乘后的零 {
             for (int i = 1; i <= n; i++) {
                 count = count * i;
                 int temp = count;
-                if (temp % 10 == 0) {
-                    int t = count / 10;
-                    int zero = count / t;
-                    while (zero / 10 != 0) {
-                        zero = zero / 10;
-                        result++;
-                    }
-                    count = t;
+                while(temp %10 ==0){
+
                 }
 
             }
