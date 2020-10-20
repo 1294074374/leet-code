@@ -41,21 +41,17 @@ public class Problem_206_反转链表{
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode myHead = head;
-        ListNode result = myHead;
-        Stack<ListNode> stack  = new Stack<>();
-
-        while(head!=null){
-            stack.push(head);
-            head = head.next;
+        ListNode prev = null;
+        ListNode curr = head;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
         }
-        while (!stack.isEmpty()){
-            ListNode temp = new ListNode(stack.pop().val);
-            myHead.next = temp;
-            myHead = myHead.next;
-        }
-        return result.next;
+        return prev;
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 

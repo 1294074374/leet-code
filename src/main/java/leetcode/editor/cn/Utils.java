@@ -9,6 +9,7 @@ public class Utils {
      * 构建二叉树
      *
      * @param array
+     * @param index 当前节点下标 初始值为0
      * @return
      */
     public static TreeNode createTree(String[] array, int index) {
