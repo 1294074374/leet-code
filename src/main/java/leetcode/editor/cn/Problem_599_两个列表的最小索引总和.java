@@ -32,27 +32,57 @@ package leetcode.editor.cn;
 // Related Topics 哈希表 
 // 👍 88 👎 0
 
+import java.util.Stack;
+
 /**
- * Java：两个列表的最小索引总和 
- 
+ * Java：两个列表的最小索引总和
+ *
  * @author laijunlin
  * @data 2020-11-14 16:13:46
  */
-public class Problem_599_两个列表的最小索引总和{
+public class Problem_599_两个列表的最小索引总和 {
     public static void main(String[] args) {
         Solution solution = new Problem_599_两个列表的最小索引总和().new Solution();
         // TO TEST
+        String[] list1 = {"Shogun","Tapioca Express","Burger King","KFC"};
+        String[] list2 = {"KFC","Shogun","Burger King"};
+        solution.findRestaurant(list1,list2);
     }
+
     /***
      * 模板
      */
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String[] findRestaurant(String[] list1, String[] list2) {
+    class Solution {
+        public String[] findRestaurant(String[] list1, String[] list2) {
+            int a = list1.length;
+            int b = list2.length;
+            int minIndex = Integer.MAX_VALUE;
+            Stack<String> stack = new Stack<>();
+            for (int i = 0; i < a; i++) {
+                for (int j = 0; j < b; j++) {
+                    if (list1[i].equals(list2[j])) {
+                        int min = i + j;
+                        if (min < minIndex) {
+                            minIndex = min;
+                            while (!stack.isEmpty()) {
+                                stack.pop();
+                            }
+                            stack.push(list1[i]);
+                        }else if(min == minIndex){
+                            stack.push(list1[i]);
+                        }
 
-        return null;
+                    }
+                }
+            }
+            String[] result = new String[stack.size()];
+            for (int i = 0; i < result.length; i++) {
+                result[i] = stack.pop();
+            }
+            return result;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
