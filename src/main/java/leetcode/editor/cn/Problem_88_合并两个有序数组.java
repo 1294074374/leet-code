@@ -40,7 +40,7 @@ public class Problem_88_合并两个有序数组 {
        int[] nums1 = {1,2,3,0,0,0};
         int[] nums2 = {2,5,6};
 
-        solution.merge(nums1,3,nums2,3);
+        solution.merge2(nums1,3,nums2,3);
         for (int i = 0; i < nums1.length; i++) {
             System.out.println(nums1[i]);
         }
@@ -54,6 +54,18 @@ public class Problem_88_合并两个有序数组 {
         public void merge(int[] nums1, int m, int[] nums2, int n) {
             System.arraycopy(nums2, 0, nums1, m, n);
             Arrays.sort(nums1);
+        }
+
+        public void merge2(int[] nums1, int m, int[] nums2, int n) {
+            // 确定指针位置
+            int p1 = m - 1;
+            int p2 = n - 1;
+            int p = m + n - 1;
+
+            while ((p1 >= 0) && (p2 >= 0)) {
+                nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
+            }
+            System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

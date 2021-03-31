@@ -5,6 +5,7 @@ import java.util.concurrent.CompletableFuture;
 /**
  * @author laijunlin
  * @date 2021-03-22 17:20
+ * 通过CompletableFuture实现同步
  */
 public class CompletableFutureTest {
     public static void main(String[] args)  {

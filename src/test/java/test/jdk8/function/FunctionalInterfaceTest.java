@@ -1,4 +1,6 @@
-package test.jdk8.stream;
+package test.jdk8.function;
+
+import test.jdk8.stream.Employee;
 
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +10,10 @@ import java.util.function.*;
  * 函数式接口
  * @author laijunlin
  * @date 2021-03-11 16:42
+ * Consumer<T> 消费型接口
+ * Supplier有一个参数 没有返回值<T> 供给型接口 没有参数有返回值,T是返回值
+ * Function<T, R> 函数型接口 T是参数，R是返回值
+ * Predicate<T> 断言型接口 T是参数 返回值boolean类型
  */
 public class FunctionalInterfaceTest {
     public static void main(String[] args) {

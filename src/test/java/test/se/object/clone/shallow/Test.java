@@ -1,4 +1,4 @@
-package test.clone.shallow;
+package test.se.object.clone.shallow;
 
 /**
  * @author laijunlin

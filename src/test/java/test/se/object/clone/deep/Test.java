@@ -1,6 +1,4 @@
-package test.clone.deep;
-
-import test.clone.shallow.ShallowDemo;
+package test.se.object.clone.deep;
 
 /**
  * @author laijunlin

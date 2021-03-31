@@ -25,6 +25,24 @@ public class Problem_58_最后一个单词的长度 {
     public static void main(String[] args) {
         Solution solution = new Problem_58_最后一个单词的长度().new Solution();
         // TO TEST
+        Integer x = 1; // 自动装箱  Integer x = Integer.valueOf(1)
+        int y  = x; // 自动拆箱  int y = x.intValue();
+        System.out.println(y);
+        String s = "abc";
+        int hash = s.hashCode();
+        char[] value = s.toCharArray();
+        int h = 0;
+        if (h == 0 && value.length > 0) {
+            char val[] = value;
+
+            for (int i = 0; i < value.length; i++) {
+                h = 31 * h + val[i];
+            }
+            hash = h;
+        }
+        System.out.println( hash);
+        System.out.println((10<<5)-10);
+        System.out.println(10*31);
     }
 
     /***

@@ -1,4 +1,4 @@
-package test.extend;
+package test.se.extend;
 
 import java.util.ArrayList;
 import java.util.List;

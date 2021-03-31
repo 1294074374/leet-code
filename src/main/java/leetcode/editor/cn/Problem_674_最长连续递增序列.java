@@ -51,8 +51,24 @@ public class Problem_674_最长连续递增序列{
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int findLengthOfLCIS(int[] nums) {
-
-        return  0;
+        if(nums.length == 1){
+            return 1;
+        }if(nums.length == 0){
+            return 0;
+        }
+        int maxLength = Integer.MIN_VALUE;
+        int temp = 1;
+        for (int i = 0; i < nums.length-1; i++) {
+            if(nums[i] < nums[i+1]){
+                temp++;
+            }else{
+                temp = 1;
+            }
+            if(temp > maxLength){
+                maxLength = temp;
+            }
+        }
+        return  maxLength;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)

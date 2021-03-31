@@ -1,4 +1,4 @@
-package test.exception;
+package test.se.exception;
 
 /**
  * @author laijunlin

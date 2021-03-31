@@ -1,7 +1,5 @@
-package test.clone.deep;
+package test.se.object.clone.deep;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
