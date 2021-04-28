@@ -1,6 +1,4 @@
-package test.se.object;
-
-import sun.reflect.annotation.ExceptionProxy;
+package test.se.object.equal;
 
 import java.util.Objects;
 
