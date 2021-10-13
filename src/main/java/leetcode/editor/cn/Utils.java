@@ -45,4 +45,12 @@ public class Utils {
         return result.next;
     }
 
+    public static void printList(ListNode node){
+        while(node != null){
+            System.out.print(node.val +",");
+            node = node.next;
+        }
+
+    }
+
 }
