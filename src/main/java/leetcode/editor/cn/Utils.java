@@ -30,6 +30,12 @@ public class Utils {
         return tn;
     }
 
+    /**
+     * 创建链表
+     *
+     * @param arr 原始数组
+     * @return 新链表的头部结点
+     */
     public static ListNode createList(int[] arr) {
         if (arr == null || arr.length == 0) {
             return null;
@@ -45,12 +51,37 @@ public class Utils {
         return result.next;
     }
 
-    public static void printList(ListNode node){
-        while(node != null){
-            System.out.print(node.val +",");
+    /**
+     * 打印链表
+     *
+     * @param node 需要打印链表的头部结点
+     */
+    public static void printList(ListNode node) {
+        while (node != null) {
+            System.out.print(node.val + ",");
             node = node.next;
         }
-
     }
 
+    /***
+     * 打印二维数组
+     * @param array 需要打印的二维数组
+     */
+    public static void print2DArray(int[][] array) {
+        StringBuffer sb = new StringBuffer();
+        int n = array.length;
+        int m = array[0].length;
+        for (int i = 0; i < n; i++) {
+            sb.append("[");
+            for (int j = 0; j < m; j++) {
+                if (j != m - 1) {
+                    sb.append(array[i][j] + ", ");
+                } else {
+                    sb.append(array[i][j]);
+                }
+            }
+            sb.append("]\n");
+        }
+        System.out.println(sb.toString());
+    }
 }
