@@ -30,33 +30,52 @@ package leetcode.editor.cn;
 // 👍 673 👎 0
 
 /**
- * Java：搜索插入位置 
- 
+ * Java：搜索插入位置
+ *
  * @author laijunlin
  * @data 2020-09-09 15:47:26
  */
-public class Problem_35_搜索插入位置{
+public class Problem_35_搜索插入位置 {
     public static void main(String[] args) {
         Solution solution = new Problem_35_搜索插入位置().new Solution();
         // TO TEST
     }
+
     /***
      * 模板
      */
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int searchInsert(int[] nums, int target) {
-        if(nums[0] >= target){
-            return 0;
-        }
-        for (int i = 0; i <nums.length -1; i++) {
-            if(nums[i] < target && nums[i+1]>=target){
-                return i+1;
+    class Solution {
+        public int searchInsert(int[] nums, int target) {
+            // 目标值小于第一个数，则直接插入第一个位置
+            if (nums[0] >= target) {
+                return 0;
             }
+            for (int i = 0; i < nums.length - 1; i++) {
+                if (nums[i] < target && nums[i + 1] >= target) {
+                    return i + 1;
+                }
+            }
+            // 遍历后没有则插在最后面
+            return nums.length;
         }
-        return nums.length ;
+
+        public int searchInsert2(int[] nums, int target) {
+            int low = 0;
+            int height = nums.length -1;
+            while (low <= height) {
+                int mid = (low + height) / 2;
+                if (nums[mid] == target) {
+                    return mid;
+                } else if (nums[mid] < target) {
+                    low = mid + 1;
+                } else {
+                    height = mid - 1;
+                }
+            }
+            return low;
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
