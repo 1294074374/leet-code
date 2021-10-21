@@ -34,7 +34,22 @@ public class Problem_66_加一 {
         int[] test = {1,2,3};
         int[] ints = solution.plusOne(test);
         for (int i = 0; i < ints.length; i++) {
-            System.out.print(ints[i]);
+            //System.out.print(ints[i]);
+        }
+        System.out.println("================");
+        // 2
+        int[] digits = new int[]{9,8,7,6,5,4,3,2,1,0};
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < digits.length; i++) {
+            sb.append(digits[i]);
+        }
+        String str = String.valueOf(Long.valueOf(sb.toString()) + 1);
+        int[] newArr = new int[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+            newArr[i] = Integer.valueOf(String.valueOf(str.charAt(i)));
+        }
+        for (int i = 0; i < newArr.length; i++) {
+            System.out.print(newArr[i]);
         }
     }
 
