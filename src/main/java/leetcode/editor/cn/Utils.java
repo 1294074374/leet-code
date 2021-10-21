@@ -84,4 +84,18 @@ public class Utils {
         }
         System.out.println(sb.toString());
     }
+
+    public static void printArray(int[] array){
+        StringBuffer sb = new StringBuffer();
+        sb.append("{");
+        for (int j = 0; j < array.length; j++) {
+            if (j != array.length - 1) {
+                sb.append(array[j] + ", ");
+            } else {
+                sb.append(array[j]);
+            }
+        }
+        sb.append("}");
+        System.out.println(sb.toString());
+    }
 }
