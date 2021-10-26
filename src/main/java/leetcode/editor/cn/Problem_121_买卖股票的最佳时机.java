@@ -47,18 +47,17 @@ public class Problem_121_买卖股票的最佳时机 {
             if (prices.length == 0||prices == null){
                 return 0;
             }
-            int count = Integer.MIN_VALUE;
+            int minPrices = Integer.MAX_VALUE;
+            int maxProfit = 0;
             for (int i = 0; i < prices.length; i++) {
-                int min = prices[i];
-                for (int j = i; j < prices.length; j++) {
-                    int max = prices[j];
-                    if (count < (max - min)) {
-                        count = max - min;
-                    }
+                // 获取最小值
+                if(prices[i] < minPrices){
+                    minPrices = prices[i];
+                }else if(prices[i] - minPrices > maxProfit){
+                    maxProfit = prices[i] - minPrices;
                 }
-
             }
-            return count;
+            return maxProfit;
 
         }
     }
